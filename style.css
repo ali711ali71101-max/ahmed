@@ -1,0 +1,117 @@
+/* General Styling */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Task Item Styling */
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    border-right: 4px solid #0d6efd;
+}
+
+.task-item:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-text {
+    flex-grow: 1;
+    margin: 0 10px;
+    word-break: break-word;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
+
+/* Checkbox Styling */
+.form-check-input {
+    width: 1.2em;
+    height: 1.2em;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.form-check-input:checked + .task-text {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .btn-add-task {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    #taskInput {
+        border-radius: 8px 8px 0 0 !important;
+    }
+    
+    #addTaskBtn {
+        border-radius: 0 0 8px 8px !important;
+    }
+}
+
+/* Animation for adding/removing tasks */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.task-item {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+    display: none;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #dee2e6;
+}
